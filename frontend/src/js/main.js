@@ -30,12 +30,13 @@ function navTodo() {
     const app = document.querySelector('#app');
 
     todosButton.addEventListener("click", function() {
-        apiActions.getRequest("https://localhost:44393/api/todo",
-            todos => {
-                console.log(todos);
-                app.innerHTML = Todos(todos);
-            }
-        )
+        fetch("https://localhost:44313/api/artist")
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .then(err => console.log(err))
+        .catch(err => console.log(err))
+        //Log the error
+
       });
 
     app.addEventListener("click", function(){
@@ -48,7 +49,7 @@ function navTodo() {
               Owner: "Jen"
             }
             apiActions.postRequest(
-                "https://localhost:44393/api/todo",
+                "https://localhost:44313/api/artist",
                 requestBody,
                 toDos => {
                     console.log("Todos returned from back end");

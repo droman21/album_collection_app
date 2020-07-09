@@ -34,13 +34,16 @@ namespace album_collection
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //services.AddControllers().AddNewtonsoftJson(o =>
-            //{
-            //    o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            //});
+            services.AddControllers().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
 
 
-            services.AddMvc();
+            // services.AddMvc();
+            //services.AddControllers();
+
+
             services.AddDbContext<MusicContext>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
 
@@ -64,6 +67,11 @@ namespace album_collection
             {
                 app.UseDeveloperExceptionPage();
             }
+           
+            
+            // used for asp.net 3.1 cors issue
+            app.UseCors(MyAllowSpecificOrigins);
+
 
             app.UseHttpsRedirection();
 
