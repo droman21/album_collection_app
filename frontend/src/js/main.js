@@ -4,7 +4,9 @@ import ArtistEdit from './components/ArtistEdit';
 import apiActions from './api/apiActions';
 import Artists from './components/Artists';
 
-export default pageBuild;
+const appDiv = document.querySelector('.app');
+
+pageBuild();
 
 function pageBuild() {
     header();
@@ -28,9 +30,17 @@ function navHome() {
 
 function showArtists(){
 
-  // const homeButton = document.querySelector(".nav__artist");
-  document.querySelector("#app").innerHTML = Artists();
+  console.log("Showing the artists!!");
 
+  // const homeButton = document.querySelector(".nav__artist");
+  fetch("https://localhost:44313/api/artist")
+        .then(response => response.json())
+        .then(artists => {
+          appDiv.innerHTML = Artists(artists);
+          console.log(artists);
+        })
+  //document.querySelector("#app").innerHTML = Artists();
+console.log("Finished Showing the artists!!");
 
 }
 
@@ -47,11 +57,11 @@ function buildNav() {
         .then(err => console.log(err))
         .catch(err => console.log(err))
         console.log("called the REST service and returned.");
-
+        
 
       });
 
-    
+      
 
     // app.addEventListener("click", function(){
     //   if(event.target.classList.contains('delete-todo__submit')){
