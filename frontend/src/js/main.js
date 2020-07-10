@@ -1,16 +1,19 @@
 import Header from './components/Header';
 import Home from './components/Home';
-import Todos from './components/Todos';
-import TodoEdit from './components/TodoEdit';
+import ArtistEdit from './components/ArtistEdit';
 import apiActions from './api/apiActions';
+import Artists from './components/Artists';
 
-export default pageBuild;
+const appDiv = document.querySelector('.app');
+
+pageBuild();
 
 function pageBuild() {
     header();
     // footer();
     navHome();
-    navTodo();
+   buildNav();
+   showArtists();
 }
 
 function header() {
@@ -19,103 +22,104 @@ function header() {
 }
 
 function navHome() {
-  const homeButton = document.querySelector(".nav__home");
+  const homeButton = document.querySelector(".nav__artist");
   homeButton.addEventListener("click", function() {
     document.querySelector("#app").innerHTML = Home();
   });
 }
 
-function navTodo() {
-    const todosButton = document.querySelector(".nav__todos");
+function showArtists(){
+
+  console.log("Showing the artists!!");
+
+  // const homeButton = document.querySelector(".nav__artist");
+  fetch("https://localhost:44313/api/artist")
+        .then(response => response.json())
+        .then(artists => {
+          appDiv.innerHTML = Artists(artists);
+          console.log(artists);
+        })
+  //document.querySelector("#app").innerHTML = Artists();
+console.log("Finished Showing the artists!!");
+
+}
+
+function buildNav() {
+    
+  
+    const artistButton = document.querySelector(".nav__artist");
     const app = document.querySelector('#app');
 
-    todosButton.addEventListener("click", function() {
+    artistButton.addEventListener("click", function() {
         fetch("https://localhost:44313/api/artist")
         .then(response => response.json())
         .then(data => console.log(data))
         .then(err => console.log(err))
         .catch(err => console.log(err))
-        //Log the error
+        console.log("called the REST service and returned.");
+        
 
       });
 
-    app.addEventListener("click", function(){
-        if(event.target.classList.contains('add-todo__submit')){
-            const todo = event.target.parentElement.querySelector('.add-todo__todoName').value;
-            console.log(todo);
+      
 
-            var requestBody = {
-              Name: todo,
-              Owner: "Jen"
-            }
-            apiActions.postRequest(
-                "https://localhost:44313/api/artist",
-                requestBody,
-                toDos => {
-                    console.log("Todos returned from back end");
-                    console.log(toDos);
-                    app.innerHTML = Todos(toDos);
-                }
-            )
-        }
-    })
+    // app.addEventListener("click", function(){
+    //   if(event.target.classList.contains('delete-todo__submit')){
+    //     const todoId = event.target.parentElement.querySelector('.todo__id').value;
+    //     console.log(todoId);
 
-    app.addEventListener("click", function(){
-      if(event.target.classList.contains('delete-todo__submit')){
-        const todoId = event.target.parentElement.querySelector('.todo__id').value;
-        console.log(todoId);
+    //     apiActions.deleteRequest(
+    //       `https://localhost:44393/api/todo/${todoId}`,
+    //       toDos => {
+    //         app.innerHTML = artists(toDos);
+    //       }
+    //     )
+    //   }
+    // })
 
-        apiActions.deleteRequest(
-          `https://localhost:44393/api/todo/${todoId}`,
-          toDos => {
-            app.innerHTML = Todos(toDos);
-          }
-        )
-      }
-    })
+    // app.addEventListener("click", function(){
+    //   if(event.target.classList.contains('edit-todo__edit')){
+    //     const todoId = event.target.parentElement.querySelector('.todo__id').value;
+    //     console.log(todoId);
 
-    app.addEventListener("click", function(){
-      if(event.target.classList.contains('edit-todo__edit')){
-        const todoId = event.target.parentElement.querySelector('.todo__id').value;
-        console.log(todoId);
+    //     apiActions.getRequest(
+    //       `https://localhost:44393/api/artist/${artistId}`,
+    //       ArtistEdit => {
+    //         console.log(artistEdit);
+    //         app.innerHTML = ArtistEdit(artistEdit);
+    //       }
+    //     )
+    //   }
+    // })
 
-        apiActions.getRequest(
-          `https://localhost:44393/api/todo/${todoId}`,
-          toDoEdit => {
-            console.log(toDoEdit);
-            app.innerHTML = TodoEdit(toDoEdit);
-          }
-        )
-      }
-    })
+    // app.addEventListener("click", function(){
+    //   if(event.target.classList.contains('update-todo__submit')){
+    //     const todoId = event.target.parentElement.querySelector('.update-todo__id').value;
+    //     const todoName = event.target.parentElement.querySelector('.update-todo__name').value;
+    //     const todoOwner = event.target.parentElement.querySelector('.update-todo__owner').value;
 
-    app.addEventListener("click", function(){
-      if(event.target.classList.contains('update-todo__submit')){
-        const todoId = event.target.parentElement.querySelector('.update-todo__id').value;
-        const todoName = event.target.parentElement.querySelector('.update-todo__name').value;
-        const todoOwner = event.target.parentElement.querySelector('.update-todo__owner').value;
+    //     console.log(todoId);
 
-        console.log(todoId);
+    //     const todoData = {
+    //       id: todoId,
+    //       name: todoName,
+    //       owner: todoOwner
+    //     };
 
-        const todoData = {
-          id: todoId,
-          name: todoName,
-          owner: todoOwner
-        };
-
-        console.log(todoData);
-        console.log(JSON.stringify(todoData));
+    //     console.log(todoData);
+    //     console.log(JSON.stringify(todoData));
 
 
-        apiActions.putRequest(
-          `https://localhost:44393/api/todo/${todoId}`,
-          todoData,
-          todos => {
-            console.log(todos);
-            app.innerHTML = Todos(todos);
-          }
-        );
-      }
-    });
+    //     apiActions.putRequest(
+    //       `https://localhost:44393/api/todo/${todoId}`,
+    //       todoData,
+    //       todos => {
+    //         console.log(todos);
+    //         app.innerHTML = Artists(todos);
+    //       }
+    //     );
+    //   }
 
-  }
+    }
+  
+  
