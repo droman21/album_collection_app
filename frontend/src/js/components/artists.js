@@ -1,5 +1,5 @@
 export default function Artists(artists){
-    console.log(`in the todo component ${artists}`)
+    console.log(`in the artist component ${artists}`)
     return `
     <ol> 
         ${artists.map(artist => {
