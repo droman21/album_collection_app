@@ -1,22 +1,12 @@
-export default function Todos(todos){
+export default function Todos(artist){
     console.log(`in the todo component ${todos}`)
     return `
     <ol> 
         ${todos.map(todo => {
-            return `
-            <li>
-                <h4 class="todo__items">${todo.name} by ${todo.owner}</h4>
-                <button class="edit-todo__edit">Edit</button>
-                <button class="delete-todo__submit">Delete</button>
-                <input class="todo__id" type="hidden" value="${todo.id}">
-            </li>
-            `
-        }).join("")}
-    </ol>
-
-    <section class="add-todo">
-            <input class="add-todo__todoName" type="text" placeholder="Add a Todo here">
-            <button class="add-todo__submit">Add a Todo</button>
-    </section>
+          return `
+           <li>${artist.name}</li>
     `
+        })}
+        </ol>
+        `
 }
