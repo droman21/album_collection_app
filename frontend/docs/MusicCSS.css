@@ -1,0 +1,14 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    background-image: url(/Images/.jpg);
+    background-size: cover;
+}
+.artist {
+    color : white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1em;
+    background-color: lightgrey;
+}
