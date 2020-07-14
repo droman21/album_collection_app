@@ -3,6 +3,8 @@ import Home from './components/Home';
 import ArtistEdit from './components/ArtistEdit';
 import apiActions from './api/apiActions';
 import Artists from './components/Artists';
+import Albums from './components/Albums';
+import Album from './components/Album';
 
 const appDiv = document.querySelector('.app');
 
@@ -10,10 +12,12 @@ pageBuild();
 
 function pageBuild() {
     header();
-    // footer();
+    //footer();
     navHome();
-   buildNav();
-   showArtists();
+    buildNav();
+    showArtists();
+    showAlbums();
+    albumNameLink();
 }
 
 function header() {
@@ -29,24 +33,45 @@ function navHome() {
 }
 
 function showArtists(){
-
-  console.log("Showing the artists!!");
-
-  // const homeButton = document.querySelector(".nav__artist");
-  fetch("https://localhost:44313/api/artist")
+  const artistLink = document.querySelector(".nav__artist");
+  artistLink.addEventListener('click', function(){
+        fetch("https://localhost:44313/api/artist")
         .then(response => response.json())
         .then(artists => {
           appDiv.innerHTML = Artists(artists);
           console.log(artists);
+          artistLink();
         })
-  //document.querySelector("#app").innerHTML = Artists();
-console.log("Finished Showing the artists!!");
+      })
+}
 
+function showAlbums(){
+  const albumLink = document.querySelector('.nav__albums');
+  albumLink.addEventListener('click', function(){
+    fetch("https://localhost:44313/api/albums")
+    .then(response => response.json())
+    .then(albums => {
+      appDiv.innerHTML = Albums(albums)
+      albumLink();
+    })
+    .catch(err => console.log(err))
+  })
+}
+
+function albumNameLink() {
+  const albumNameElements = document.querySelectorAll('.album__name');
+  albumNameElements.forEach(element=> {
+    element.addEventListener('click', function(){
+      const albumId = element.id;
+      fetch(`https://localhost:44313/api/album/${albumId}`)
+      .then(response => response.json())
+      .then(album => appDiv.innerHTML = Album(album))
+      .catch(err => console.log(err))
+    })
+  })
 }
 
 function buildNav() {
-    
-  
     const artistButton = document.querySelector(".nav__artist");
     const app = document.querySelector('#app');
 
@@ -57,7 +82,6 @@ function buildNav() {
         .then(err => console.log(err))
         .catch(err => console.log(err))
         console.log("called the REST service and returned.");
-        
 
       });
 
