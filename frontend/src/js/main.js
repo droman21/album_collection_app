@@ -8,9 +8,9 @@ import Album from './components/Album';
 
 const appDiv = document.querySelector('.app');
 
-pageBuild();
+//pageBuild();
 
-function pageBuild() {
+export default function pageBuild() {
     header();
     //footer();
     navHome();
@@ -60,7 +60,7 @@ function showAlbums(){
 
 function albumNameLink() {
   const albumNameElements = document.querySelectorAll('.album__name');
-  albumNameElements.forEach(element=> {
+  albumNameElements.forEach(element => {
     element.addEventListener('click', function(){
       const albumId = element.id;
       fetch(`https://localhost:44313/api/album/${albumId}`)
@@ -81,12 +81,9 @@ function buildNav() {
         .then(data => console.log(data))
         .then(err => console.log(err))
         .catch(err => console.log(err))
-        console.log("called the REST service and returned.");
 
       });
-
-      
-
+    
     // app.addEventListener("click", function(){
     //   if(event.target.classList.contains('delete-todo__submit')){
     //     const todoId = event.target.parentElement.querySelector('.todo__id').value;

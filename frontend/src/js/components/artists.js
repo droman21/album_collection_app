@@ -4,7 +4,7 @@ export default function Artists(artists){
     <ul> 
         ${artists.map(artist => {
             return `
-            
+            <h1>Artist List</h1>
             <article class="artist">
                 <h4 class="artist__items">${artist.artistName}</h4>
                 <h4 class="artist__items">${artist.homeTown}</h4>
@@ -14,12 +14,5 @@ export default function Artists(artists){
             `
         }).join("")}
     </ul>
-  
     `
-    
-        //  console.log(`in the Artists component ${artists}`)
-        //  return `
-        // <ol><li>test 123</li></ol>
-        // `
-
 }
