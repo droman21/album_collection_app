@@ -10,8 +10,8 @@ namespace album_collection.Repositories
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
-        void Create(T obj);
-        void Delete(Artist artist);
-        void Update(Artist artist);
+        void Create(T entity);
+        //void Delete(Artist artist);
+        void Update(T entity);
     }
 }

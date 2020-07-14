@@ -11,6 +11,7 @@ namespace album_collection
     public class MusicContext : DbContext
     {
         public DbSet<Artist> Artists { get; set; }
+        public DbSet<Album> Albums { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,10 +27,18 @@ namespace album_collection
             modelbuilder.Entity<Artist>().HasData(
 
 
-               new Artist("Machine Gun Kelly", 1, "Image", 30, "Cleveland Record Label", "Cleveland, OH"),
+               new Artist("Machine Gun Kelly", 1, "Image", 30, "Bad Boy Records", "Cleveland, OH"),
                new Artist("Big Moochie Grape", 2, "Image", 29, "Paper Route EMPIRE", "Memphis, TN")
 
                );
+
+            modelbuilder.Entity<Album>().HasData(
+
+
+                new Album("Hotel Diablo", 1, "MGK.jpg", "Bad Boy Records", 1),
+                new Album("Eat or Get Ate", 2, "BigMoochie.jpg", "Paper Route Empire", 2)
+                
+                );
 
         }
     }
