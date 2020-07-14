@@ -46,6 +46,7 @@ namespace album_collection
 
             services.AddDbContext<MusicContext>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
+            services.AddScoped<IRepository<Album>, AlbumRepository>();
 
             services.AddCors(options =>
             {
@@ -54,6 +55,10 @@ namespace album_collection
                 {
                     builder.WithOrigins("http://localhost:8080",
                                         "https://localhost:8080")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                    builder.WithOrigins("http://localhost:8081",
+                                        "http://localhost:8081")
                                         .AllowAnyHeader()
                                         .AllowAnyMethod();
                 });

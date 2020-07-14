@@ -15,7 +15,7 @@ namespace album_collection.Models
         public string HomeTown { get; set; }
 
 
-        //public virtual ICollection<Review> Reviews { get; set; }
+        public virtual IEnumerable<Album> Albums { get; set; }
 
         public Artist()
         {
