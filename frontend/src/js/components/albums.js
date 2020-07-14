@@ -5,7 +5,8 @@ export default function albums(albums){
             ${albums.map(album => {
                 return `
                 <li>
-                    <h4>${album.name}</h4>
+                    <h4>${album.title}</h4>
+                    <h4>${album.id}</h4>
                 </li>
                 `
             }).join("")}

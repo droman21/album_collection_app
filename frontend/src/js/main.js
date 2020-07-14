@@ -17,7 +17,7 @@ export default function pageBuild() {
     buildNav();
     showArtists();
     showAlbums();
-    albumNameLink();
+    albumLink();
 }
 
 function header() {
@@ -40,7 +40,6 @@ function showArtists(){
         .then(artists => {
           appDiv.innerHTML = Artists(artists);
           console.log(artists);
-          artistLink();
         })
       })
 }
@@ -48,7 +47,7 @@ function showArtists(){
 function showAlbums(){
   const albumLink = document.querySelector('.nav__albums');
   albumLink.addEventListener('click', function(){
-    fetch("https://localhost:44313/api/albums")
+    fetch('https://localhost:44313/api/album')
     .then(response => response.json())
     .then(albums => {
       appDiv.innerHTML = Albums(albums)
@@ -58,11 +57,12 @@ function showAlbums(){
   })
 }
 
-function albumNameLink() {
+function albumLink() {
   const albumNameElements = document.querySelectorAll('.album__name');
   albumNameElements.forEach(element => {
     element.addEventListener('click', function(){
       const albumId = element.id;
+      console.log("Album ID is"+albumId);
       fetch(`https://localhost:44313/api/album/${albumId}`)
       .then(response => response.json())
       .then(album => appDiv.innerHTML = Album(album))
