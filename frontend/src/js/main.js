@@ -14,7 +14,7 @@ export default function pageBuild() {
     header();
     //footer();
     navHome();
-    albumsByArtistID();
+    showAlbumsByArtistID();
     buildNav();
     showArtists();
     showAlbums();
@@ -81,7 +81,7 @@ function albumLink() {
   })
 }
 
-function albumsByArtistID() {
+function showAlbumsByArtistID() {
   const artistByIDLink = document.querySelectorAll(".artist__name");
   artistByIDLink.forEach(element => {
     element.addEventListener('click', function() {
@@ -95,6 +95,7 @@ function albumsByArtistID() {
   })
 
 }
+
 function buildNav() {
     const artistButton = document.querySelector(".nav__artist");
     const app = document.querySelector('#app');
