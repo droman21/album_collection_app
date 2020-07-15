@@ -1,4 +1,5 @@
-export default function albums(albums){
+export default function Albums(albums){
+    console.log(`in the albums component ${albums}`)
     return `
         <h1>List of Albums</h1>
         <ul>

@@ -14,6 +14,7 @@ export default function pageBuild() {
     header();
     //footer();
     navHome();
+    albumsByArtistID();
     buildNav();
     showArtists();
     showAlbums();
@@ -80,6 +81,20 @@ function albumLink() {
   })
 }
 
+function albumsByArtistID() {
+  const artistByIDLink = document.querySelectorAll(".artist__name");
+  artistByIDLink.forEach(element => {
+    element.addEventListener('click', function() {
+      const artistId = element.id;
+      console.log("Artist ID is"+artistId);
+      fetch(`https://localhost:44313/api/album/${artistID}`)
+      .then(response => response.json())
+      .then(albums => appDiv.innerHTML = Albums(albums))
+      .catch(err => console.log(err))
+    })
+  })
+
+}
 function buildNav() {
     const artistButton = document.querySelector(".nav__artist");
     const app = document.querySelector('#app');
