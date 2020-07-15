@@ -1,7 +1,7 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
-    background-image: url(/Images/.jpg);
+    /* background-image: url(/Images/.jpg); */
     background-size: cover;
     box-sizing: border-box;
 }
