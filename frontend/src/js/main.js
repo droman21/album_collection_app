@@ -18,6 +18,7 @@ export default function pageBuild() {
     showArtists();
     showAlbums();
     albumLink();
+    showArtistsPageLoad();
 }
 
 function header() {
@@ -42,6 +43,14 @@ function showArtists(){
           console.log(artists);
         })
       })
+}
+function showArtistsPageLoad(){
+        fetch("https://localhost:44313/api/artist")
+        .then(response => response.json())
+        .then(artists => {
+          appDiv.innerHTML = Artists(artists);
+          console.log(artists);
+        })
 }
 
 function showAlbums(){
