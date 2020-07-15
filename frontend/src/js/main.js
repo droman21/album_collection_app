@@ -15,13 +15,13 @@ export default function pageBuild() {
   header();
   //footer();
   navHome();
-  showAlbumsByArtistID();
   // albumsByArtistIDLink();
   buildNav();
   showArtists();
   showAlbums();
   albumLink();
   showArtistsPageLoad();
+  // showAlbumsByArtistID();
 }
 
 function header() {
@@ -54,6 +54,7 @@ function showArtistsPageLoad() {
     .then(artists => {
       appDiv.innerHTML = Artists(artists);
       console.log(artists);
+      showAlbumsByArtistID();
     })
 }
 
@@ -85,9 +86,11 @@ function albumLink() {
 }
 
 function showAlbumsByArtistID() {
+  console.log("we're in the fuction")
   const artistByIDLink = document.querySelectorAll(".artist__name");
   artistByIDLink.forEach(element => {
     element.addEventListener('click', function() {
+      console.log("added eventlistener")
       const artistId = element.id;
       console.log("Artist ID is"+artistId);
       fetch(`https://localhost:44313/api/album/${artistId}`)
