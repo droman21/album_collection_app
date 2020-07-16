@@ -6,10 +6,9 @@ export default function Artists(artists){
         ${artists.map(artist => {
             return `
             <article class="artist">
-                <h4 class="artist__name">${artist.artistName}</h4>
+                <h4 class="artist__name" id="${artist.id}">${artist.artistName}</h4>
                 <h4 class="artist__items">${artist.homeTown}</h4>
                 <h4 class="artist__items">${artist.recordLabel}</h4>
-                <input class="artist__id" type="hidden" value="${artist.id}">
             </article>
             `
         }).join("")}

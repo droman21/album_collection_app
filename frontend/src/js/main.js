@@ -21,7 +21,7 @@ export default function pageBuild() {
   showAlbums();
   albumLink();
   showArtistsPageLoad();
-  // showAlbumsByArtistID();
+  showAlbumsByArtistID();
 }
 
 function header() {
@@ -43,7 +43,8 @@ function showArtists() {
       .then(response => response.json())
       .then(artists => {
         appDiv.innerHTML = Artists(artists);
-        console.log(artists);
+        console.log(artists); 
+        showAlbumsByArtistID();
       })
   })
 }
@@ -91,11 +92,11 @@ function showAlbumsByArtistID() {
   artistByIDLink.forEach(element => {
     element.addEventListener('click', function() {
       console.log("added eventlistener")
-      const artistId = element.id;
-      console.log("Artist ID is"+artistId);
-      fetch(`https://localhost:44313/api/album/${artistId}`)
+      const id = element.id;
+      console.log(`Artist ID is ${id}`);
+      fetch(`https://localhost:44313/api/artist/${id}`)
       .then(response => response.json())
-      .then(Artist => appDiv.innerHTML = Artist(artist))
+      .then(artist => appDiv.innerHTML = Artist(artist))
       // albumsByArtistIDLink();
       .catch(err => console.log(err))
     })

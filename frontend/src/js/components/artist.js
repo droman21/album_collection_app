@@ -2,14 +2,14 @@ export default function Artist(artist){
 
     return `
         <h1>${artist.artistName}</h1>
-        <ol>
+        <ul>
             ${artist.albums.map(album =>{
                 return `
                 <li>
-                    <h4>${album.title}</h4>
+                    <h4 class="album__title">${album.title}</h4>
                 </li>
                 `
             }).join("")}
-        <ol>
+        <ul>
     `
 }
