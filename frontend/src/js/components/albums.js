@@ -11,5 +11,9 @@ export default function Albums(albums){
                 </li>
                 `
             }).join("")}
-    `
+        </ul>
+        <section class="create-album">
+        <button class="create-album__button">Create an Album Here</button>
+        </section>
+    `;
 }
