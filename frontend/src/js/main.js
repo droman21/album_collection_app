@@ -43,7 +43,8 @@ function showArtists() {
       .then(response => response.json())
       .then(artists => {
         appDiv.innerHTML = Artists(artists);
-        console.log(artists);
+        console.log(artists); 
+        showAlbumsByArtistID();
       })
   })
 }
