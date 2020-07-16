@@ -93,7 +93,7 @@ function showAlbumsByArtistID() {
       console.log("added eventlistener")
       const id = element.id;
       console.log(`Artist ID is ${id}`);
-      fetch(`https://localhost:44313/api/album/${id}`)
+      fetch(`https://localhost:44313/api/artist/${id}`)
       .then(response => response.json())
       .then(artist => appDiv.innerHTML = Artist(artist))
       // albumsByArtistIDLink();
