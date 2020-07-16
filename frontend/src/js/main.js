@@ -161,7 +161,7 @@ appDiv.addEventListener("click", function(){
 appDiv.addEventListener("click", function () {
   if (event.target.classList.contains('update-album__submit')) {
     const albumName = event.target.parentElement.querySelector('.update-album__name').value;
-    const albumArtist = event.target.parentElement.querySelector('.update-album__owner').value;
+    const albumArtist = event.target.parentElement.querySelector('.update-album__artist').value;
 
     console.log(albumName);
 
@@ -170,7 +170,7 @@ appDiv.addEventListener("click", function () {
       artist: albumArtist
     }
 
-    const artistCallBack = (albums) => {
+    const artistCallBack = (artist) => {
       apiActions.getRequest(
         `https://localhost:44313/api/artist/${artistId}`,
         artist => {
