@@ -4,6 +4,7 @@ body {
     /* background-image: url(/Images/.jpg); */
     /* background-size: cover; */
     box-sizing: border-box;
+    background-color: #333333;
 }
 /* .artist {
     color : white;
