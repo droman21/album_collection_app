@@ -31,10 +31,12 @@ namespace album_collection.Controllers
             return albumRepo.GetById(id);
         }
 
-        // POST: api/Owner
+        // POST: api/Artist
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Album> Post([FromBody] Album value)
         {
+            albumRepo.Create(value);
+            return albumRepo.GetAll();
         }
 
         // PUT: api/Owner/5
