@@ -161,12 +161,14 @@ appDiv.addEventListener("click", function () {
   if (event.target.classList.contains('create-album__submit')) {
     const albumName = event.target.parentElement.querySelector('.create-album__albumTitle').value;
     const albumArtist = event.target.parentElement.querySelector('.create-album__albumArtists').value;
+    const recordLabel = event.target.parentElement.querySelector('.artist__recordLabel').value;
 
-    console.log("Album name is" + albumName);
+    console.log("Album name is" + albumName +" The artist is" + albumArtist);
 
     var requestBody = {
-      Name: albumName,
-      ArtistId: albumArtist
+      title: albumName,
+      artistId: albumArtist,
+      label: recordLabel
     }
 
     apiActions.postRequest(
