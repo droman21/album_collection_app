@@ -2,15 +2,41 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
     /* background-image: url(/Images/.jpg); */
-    background-size: cover;
+    /* background-size: cover; */
     box-sizing: border-box;
 }
-.artist {
+/* .artist {
     color : white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     column-gap: 1em;
     background-color: lightgrey;
-    padding-right: 40px;
+} */
+
+.artist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    border: 5px solid;
+    margin-bottom: 2.5px;
+    background-color: gold;
+}
+
+.albumsByArtist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    border: 5px solid;
+    margin-bottom: 2.5px;
+    background-color: gold;
+}
+
+.AlbumList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    border: 5px solid;
+    margin-bottom: 2.5px;
+    background-color: gold;
 }

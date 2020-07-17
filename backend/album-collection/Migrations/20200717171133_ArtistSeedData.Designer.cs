@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using album_collection;
 
 namespace album_collection.Migrations
 {
     [DbContext(typeof(MusicContext))]
-    partial class MusicContextModelSnapshot : ModelSnapshot
+    [Migration("20200717171133_ArtistSeedData")]
+    partial class ArtistSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,88 +44,6 @@ namespace album_collection.Migrations
                     b.HasIndex("ArtistID");
 
                     b.ToTable("Albums");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            ArtistID = 1,
-                            Image = "MGK.jpg",
-                            Label = "Bad Boy Records",
-                            Title = "Hotel Diablo"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            ArtistID = 2,
-                            Image = "BigMoochie.jpg",
-                            Label = "Paper Route Empire",
-                            Title = "Eat or Get Ate"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            ArtistID = 3,
-                            Image = "SunsTirade.jpg",
-                            Label = "Top Dawg Entertainment",
-                            Title = "The Sun's Tirade"
-                        },
-                        new
-                        {
-                            ID = 4,
-                            ArtistID = 4,
-                            Image = "Lemonade. jpg",
-                            Label = "Parkwood",
-                            Title = "Lemonade"
-                        },
-                        new
-                        {
-                            ID = 5,
-                            ArtistID = 5,
-                            Image = "DontSmileAtMe.jpg",
-                            Label = "Interscope Records",
-                            Title = "Don't Smile At Me"
-                        },
-                        new
-                        {
-                            ID = 6,
-                            ArtistID = 5,
-                            Image = "wwafawdwg.jpg",
-                            Label = "Interscope Records",
-                            Title = "When We All Fall Aleep, Where Do We Go?"
-                        },
-                        new
-                        {
-                            ID = 7,
-                            ArtistID = 6,
-                            Image = "Views.jpg",
-                            Label = "OVO Sound",
-                            Title = "Views"
-                        },
-                        new
-                        {
-                            ID = 8,
-                            ArtistID = 6,
-                            Image = "iyrtitl.jpg",
-                            Label = "OVO Sound",
-                            Title = "If You're Reading This It's Too Late"
-                        },
-                        new
-                        {
-                            ID = 9,
-                            ArtistID = 6,
-                            Image = "Scorpion.jpg",
-                            Label = "OVO Sound",
-                            Title = "Scorpion"
-                        },
-                        new
-                        {
-                            ID = 10,
-                            ArtistID = 3,
-                            Image = "CilviaDemo.jpg",
-                            Label = "Top Dawg Entertainment",
-                            Title = "Cilvia Demo"
-                        });
                 });
 
             modelBuilder.Entity("album_collection.Models.Artist", b =>

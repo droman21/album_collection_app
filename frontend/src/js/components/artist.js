@@ -1,7 +1,8 @@
 export default function Artist(artist){
 
     return `
-        <h1>${artist.artistName}</h1>
+        <h1>Albums By: ${artist.artistName}</h1>
+        <section class="albumsByArtist">
         <ul>
             ${artist.albums.map(album =>{
                 return `
@@ -11,5 +12,6 @@ export default function Artist(artist){
                 `
             }).join("")}
         <ul>
+        </section>
     `
 }
