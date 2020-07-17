@@ -148,7 +148,6 @@ function buildNav() {
 
 appDiv.addEventListener("click", function(){
   const createAlbumSection = document.querySelector('.create-album');
-  console.log("Clicked on the Create Album Button")
   if(event.target.classList.contains('create-album__button')){
     apiActions.getRequest('https://localhost:44313/api/artist',
     artists => {
@@ -159,31 +158,27 @@ appDiv.addEventListener("click", function(){
 })
 
 appDiv.addEventListener("click", function () {
-  if (event.target.classList.contains('update-album__submit')) {
-    const albumName = event.target.parentElement.querySelector('.update-album__name').value;
-    const albumArtist = event.target.parentElement.querySelector('.update-album__artist').value;
+  if (event.target.classList.contains('create-album__submit')) {
+    const albumName = event.target.parentElement.querySelector('.create-album__albumTitle').value;
+    const albumArtist = event.target.parentElement.querySelector('.create-album__albumArtists').value;
+    const recordLabel = event.target.parentElement.querySelector('.artist__recordLabel').value;
 
-    console.log(albumName);
+    console.log("Album name is" + albumName +" The artist is" + albumArtist);
 
-    const requestBody = {
-      name: albumName,
-      artist: albumArtist
+    var requestBody = {
+      title: albumName,
+      artistId: albumArtist,
+      label: recordLabel
     }
 
-    const artistCallBack = (artist) => {
-      apiActions.getRequest(
-        `https://localhost:44313/api/artist/${artistId}`,
-        artist => {
-          console.log(artist);
-          appDiv.innerHTML = Artist(artist);
-        }
-      )
-    }
-
-    apiActions.putRequest(
+    apiActions.postRequest(
       "https://localhost:44313/api/album",
       requestBody,
-      artistCallBack
-    );
-  }
+      albums => {
+          console.log("Albums returned from back end");
+          console.log("TEST TEST");
+          appDiv.innerHTML = Albums(albums);
+      }
+  )
+}
 })

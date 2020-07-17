@@ -7,8 +7,8 @@ export default function Artists(artists){
             return `
             <article class="artist">
                 <h4 class="artist__name" id="${artist.id}">${artist.artistName}</h4>
-                <h4 class="artist__items">${artist.homeTown}</h4>
-                <h4 class="artist__items">${artist.recordLabel}</h4>
+                <h4 class="artist__homeTown">${artist.homeTown}</h4>
+                <h4 class="artist__recordLabel">${artist.recordLabel}</h4>
             </article>
             `
         }).join("")}
