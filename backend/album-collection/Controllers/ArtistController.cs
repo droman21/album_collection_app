@@ -41,7 +41,9 @@ namespace album_collection.Controllers
         [HttpGet("{id}")]
         public Artist Get(int id)
         {
-            return artistRepo.GetById(id);
+            Artist artist = artistRepo.GetById(id);
+            return artist;
+            //return artistRepo.GetById(id);
         }
 
         // POST api/<ArtistController>

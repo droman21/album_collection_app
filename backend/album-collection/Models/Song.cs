@@ -13,10 +13,9 @@ namespace album_collection.Models
 
         public int ID { get; set; }
         public string Name { get; set; }
-
         public int AlbumID { get; set; }
 
-        [JsonIgnore]
+ 
         public virtual Album album { get; set; }
 
         public Song()

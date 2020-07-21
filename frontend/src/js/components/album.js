@@ -6,6 +6,7 @@ export default function album(album){
                 return `
                 <li>
                     <h4>${artist.name}</h4>
+                    <h4>
                 </li>
                 `
             })}

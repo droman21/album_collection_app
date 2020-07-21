@@ -19,10 +19,10 @@ namespace album_collection.Models
 
         public string Label { get; set; }
 
-        [JsonIgnore]
+        
         public virtual Artist artist { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual IEnumerable<Song> songs { get; set; }
 
         public Album()

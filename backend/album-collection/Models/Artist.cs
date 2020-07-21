@@ -17,7 +17,7 @@ namespace album_collection.Models
         public string RecordLabel { get; set; }
         public string HomeTown { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual IEnumerable<Album> Albums { get; set; }
 
         public Artist()
