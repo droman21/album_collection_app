@@ -5,15 +5,31 @@ body {
     /* background-size: cover; */
     box-sizing: border-box;
     background-color: #333333;
+    margin: 0 4em;
 }
-/* .artist {
-    color : white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    column-gap: 1em;
-    background-color: lightgrey;
-} */
+
+nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 100%;
+    position: fixed;
+    background-color: gold;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border: solid 4px; 
+}
+
+nav :hover {
+    background-color: honeydew;
+    opacity: .5;
+    padding: 1em;
+}
+
+.app {
+    padding-top: 2.5em;
+}
 
 .artist {
     display: grid;

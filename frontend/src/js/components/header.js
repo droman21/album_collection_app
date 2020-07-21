@@ -1,10 +1,8 @@
 export default function Header() {
-    return `
+  return `
       <nav class='nav__header'>
-      <ul>
-        <li class='nav__artist'>Artists</li>
-        <li class='nav__albums'>Albums</li>       
-      </ul>
+        <p class='nav__artist'>Artists</p>
+        <p class='nav__albums'>Albums</p>      
       </nav>  
       `;
-  }
+}
