@@ -80,8 +80,3 @@ nav p {
     background-color: purple;
     border: solid 4px;
 }
-
-.create-album__button :hover {
-    background-color: honeydew;
-    opacity: .7;
-}
