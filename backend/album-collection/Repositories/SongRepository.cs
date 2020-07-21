@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace album_collection.Repositories
 {
-    public class AlbumRepository : Repository<Album>, IRepository<Album>
+    public class SongRepository : Repository<Song>, IRepository<Song>
     {
-        public AlbumRepository(MusicContext context) : base(context)
+        public SongRepository(MusicContext context) : base(context)
         {
 
         }
 
-      
+
     }
 }
+

@@ -3,40 +3,45 @@ using album_collection.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-
 namespace album_collection.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
-    public class AlbumController : ControllerBase
+    public class SongController : ControllerBase
     {
-        IRepository<Album> albumRepo;
 
-        public AlbumController(IRepository<Album> albumRepo)
+        IRepository<Song> songRepo;
+
+        public SongController(IRepository<Song> songRepo)
         {
-            this.albumRepo = albumRepo;
+
+            this.songRepo = songRepo;
+
+
         }
 
-        //Get: api/Album
+
+        //Get: api/Song
         [HttpGet]
-        public IEnumerable<Album> Get()
+        public IEnumerable<Song> Get()
         {
-            return albumRepo.GetAll();
+            return songRepo.GetAll();
         }
 
         // GET: api/Owner/5
         [HttpGet("{id}")]
-        public Album Get(int id)
+        public Song Get(int id)
         {
-            return albumRepo.GetById(id);
+            return songRepo.GetById(id);
         }
 
-        // POST: api/Artist
+        // POST: api/Song
         [HttpPost]
-        public IEnumerable<Album> Post([FromBody] Album value)
+        public IEnumerable<Song> Post([FromBody] Song value)
         {
-            albumRepo.Create(value);
-            return albumRepo.GetAll();
+            songRepo.Create(value);
+            return songRepo.GetAll();
         }
 
         // PUT: api/Owner/5
@@ -50,8 +55,9 @@ namespace album_collection.Controllers
         public void Delete(int id)
         {
 
-            
+
 
         }
+
     }
 }

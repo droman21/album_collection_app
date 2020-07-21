@@ -22,15 +22,18 @@ namespace album_collection.Models
         [JsonIgnore]
         public virtual Artist artist { get; set; }
 
+        [JsonIgnore]
+        public virtual IEnumerable<Song> songs { get; set; }
+
         public Album()
         {
 
         }
 
-        public Album(string title, int id, string image, string label, int artistID)
+        public Album(string title, int albumID, string image, string label, int artistID)
         {
             Title = title;
-            ID = id;
+            ID = albumID;
             Image = image;
             Label = label;
             ArtistID = artistID;

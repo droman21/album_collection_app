@@ -47,6 +47,7 @@ namespace album_collection
             services.AddDbContext<MusicContext>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
             services.AddScoped<IRepository<Album>, AlbumRepository>();
+            services.AddScoped<IRepository<Song>, SongRepository>();
 
             services.AddCors(options =>
             {
