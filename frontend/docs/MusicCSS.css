@@ -1,11 +1,13 @@
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
     /* background-image: url(/Images/.jpg); */
     /* background-size: cover; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
     box-sizing: border-box;
     background-color: #333333;
     margin: 0 4em;
+    min-width: 600px;
+    padding-right: 2.5em;
 }
 
 nav {
@@ -18,17 +20,21 @@ nav {
     margin: 0;
     top: 0;
     left: 0;
-    border: solid 4px; 
+    border-top: solid 4px;
+    border-bottom: solid 4px; 
 }
 
 nav :hover {
     background-color: honeydew;
-    opacity: .5;
-    padding: 1em;
+    opacity: .7;
 }
 
+nav p {
+    margin: 0;
+    padding: 1em 2em;
+}
 .app {
-    padding-top: 2.5em;
+    padding-top: 3em;
 }
 
 .artist {
@@ -38,22 +44,26 @@ nav :hover {
     border: 5px solid;
     margin-bottom: 2.5px;
     background-color: gold;
+    justify-items: center;
+    padding: 0 1em;
+    /* padding-right: 1em; */
 }
 
 .albumsByArtist {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
     border: 5px solid;
     margin-bottom: 2.5px;
     background-color: gold;
 }
 
 .AlbumList {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
     border: 5px solid;
     margin-bottom: 2.5px;
     background-color: gold;
+
 }
