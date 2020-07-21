@@ -1,7 +1,10 @@
-﻿using System;
+﻿using album_collection.Repositories;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace album_collection.Models
 {
@@ -14,7 +17,7 @@ namespace album_collection.Models
         public string RecordLabel { get; set; }
         public string HomeTown { get; set; }
 
-
+        [JsonIgnore]
         public virtual IEnumerable<Album> Albums { get; set; }
 
         public Artist()

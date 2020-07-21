@@ -13,6 +13,8 @@ namespace album_collection
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Album> Albums { get; set; }
 
+        public DbSet<Song> Songs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=MusicDb;Trusted_Connection=True;";
@@ -51,6 +53,42 @@ namespace album_collection
                 new Album("Cilvia Demo", 10, "CilviaDemo.jpg", "Top Dawg Entertainment", 3)
 
                 );
+
+
+            modelbuilder.Entity<Song>().HasData(
+
+               new Song("Death in my pocket", 1, 1),
+               new Song("Super Song", 2, 1),
+
+               new Song("Clusters", 3, 2),
+               new Song("Super Song", 4, 2),
+
+               new Song("Free Lunch", 5, 3),
+               new Song("Super Song", 6, 3),
+
+               new Song("Hold Up", 7, 4),
+               new Song("Super Song", 8, 4),
+
+               new Song("My Boy", 9, 5),
+               new Song("Super Song", 10, 5),
+
+               new Song("Bad Guy", 11, 6),
+               new Song("Super Song", 12, 6),
+
+               new Song("Hype", 13, 7),
+               new Song("Super Song", 14, 7),
+
+               new Song("Legend", 15, 8),
+               new Song("Super Song", 16, 8),
+
+               new Song("Holiday", 17, 9),
+               new Song("Super Song", 18, 9),
+
+                new Song("West Savannah", 19, 10),
+                new Song("Super Song", 20, 10)
+
+               ); ;
+
 
         }
     }
