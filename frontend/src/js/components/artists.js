@@ -1,7 +1,7 @@
 export default function Artists(artists){
     console.log(`in the artist component ${artists}`)
     return `
-    <h1>Artist List</h1>
+    <h1>Artists</h1>
     <ul>
    
         ${artists.map(artist => {

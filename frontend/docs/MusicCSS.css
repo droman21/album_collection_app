@@ -16,7 +16,7 @@ nav {
     justify-content: space-evenly;
     width: 100%;
     position: fixed;
-    background-color: gold;
+    background-color: purple;
     margin: 0;
     top: 0;
     left: 0;
@@ -37,6 +37,10 @@ nav p {
     padding-top: 3em;
 }
 
+.app h1 {
+    color: honeydew;
+}
+
 .artist {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -46,7 +50,6 @@ nav p {
     background-color: gold;
     justify-items: center;
     padding: 0 1em;
-    /* padding-right: 1em; */
 }
 
 .albumsByArtist {
@@ -59,11 +62,26 @@ nav p {
 }
 
 .AlbumList {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto; */
     border: 5px solid;
     margin-bottom: 2.5px;
     background-color: gold;
+}
 
+.create-album {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.create-album__button {
+    padding: 1em;
+    font-weight: bold;
+    background-color: purple;
+    border: solid 4px;
+}
+
+.create-album__button :hover {
+    background-color: honeydew;
+    opacity: .7;
 }
