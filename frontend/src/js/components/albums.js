@@ -1,7 +1,7 @@
 export default function Albums(albums){
     console.log("In the albums component")
     return `
-        <h1>List of Albums</h1>
+        <h1>Albums</h1>
         <section class="AlbumList">
         <ul>
             ${albums.map(album => {
@@ -14,7 +14,7 @@ export default function Albums(albums){
             }).join("")}
         </ul>
         <section class="create-album">
-        <button class="create-album__button">Create an Album Here</button>
+        <button class="create-album__button">Add an Album</button>
         </section>
         </section>
     `;
