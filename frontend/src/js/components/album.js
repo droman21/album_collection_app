@@ -1,15 +1,14 @@
 export default function album(album){
     return `
-        <h1>${album.name}</h1>
+        <h1>${album.title}</h1>
         <ol>
-            ${album.artists.map(artist =>{
+            ${album.songs.map(song =>{
                 return `
                 <li>
-                    <h4>${artist.name}</h4>
-                    <h4>
+                    <h4>${song.name}</h4>
                 </li>
                 `
-            })}
+            }).join("")}
         <ol>
     `
 }

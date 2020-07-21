@@ -21,7 +21,6 @@ export default function pageBuild() {
   albumLink();
   showArtistsPageLoad();
   showAlbumsByArtistID();
-  albumDetailClick();
 
 }
 
@@ -147,26 +146,35 @@ function buildNav() {
 //     )
 //   }
 // })
-function albumDetailClick() {
-  if(document.getElementById(".album__title")){
-  const albumDetailClick = document.querySelector(".album__title");
-  const album__id = document.querySelector(".album__id");
-  albumDetailClick.addEventListener("click", function () {
-    console.log("added album eventlistener")
-      const id = album__id.id;
+// function albumDetailClick() {
+//   const albumDetailClick = document.querySelector(".album__title");
+//   const album__id = document.querySelector(".album__id");
+//   albumDetailClick.addEventListener("click", function () {
+//     console.log("added album eventlistener")
+//       const id = album__id.id;
+//       console.log(`Album ID is ${id}`);
+//       fetch(`https://localhost:44313/api/album/${id}`)
+//         .then(response => response.json())
+//         .then(album => appDiv.innerHTML = Album(album))
+//         .catch(err => console.log(err))
+//     })
+
+
+// }
+
+
+appDiv.addEventListener("click", function () {
+  if(event.target.classList.contains('album__title')){
+    //const albumTitle = document.querySelector(".album__title");
+    console.log("added album eventlistener");
+      const id = event.target.id;
       console.log(`Album ID is ${id}`);
       fetch(`https://localhost:44313/api/album/${id}`)
         .then(response => response.json())
         .then(album => appDiv.innerHTML = Album(album))
         .catch(err => console.log(err))
-    })
-
-    
-} else {
-    console.log("Element album does not exist");
-}
-
-}
+  }
+})
 
 appDiv.addEventListener("click", function(){
   const createAlbumSection = document.querySelector('.create-album');

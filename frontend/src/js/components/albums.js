@@ -8,7 +8,6 @@ export default function Albums(albums){
                 return `
                 <li>
                     <h4 class='album__title'>${album.title}</h4>
-                    <h4 class='album__id' type="hidden">${album.id}</h4>
                 </li>
                 `
             }).join("")}

@@ -8,7 +8,7 @@ export default function Artist(artist){
             ${artist.albums.map(album =>{
                 return `
                 <li>
-                    <h4 class="album__title">${album.title}</h4>
+                    <h4 class="album__title" id="${album.id}">${album.title}</h4>
                 </li>
                 `
             }).join("")}
