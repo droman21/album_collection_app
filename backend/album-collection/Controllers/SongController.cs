@@ -21,7 +21,6 @@ namespace album_collection.Controllers
 
         }
 
-
         //Get: api/Song
         [HttpGet]
         public IEnumerable<Song> Get()
@@ -36,7 +35,7 @@ namespace album_collection.Controllers
             return songRepo.GetById(id);
         }
 
-        // POST: api/Song
+        // POST api/SongController>
         [HttpPost]
         public IEnumerable<Song> Post([FromBody] Song value)
         {
@@ -44,20 +43,21 @@ namespace album_collection.Controllers
             return songRepo.GetAll();
         }
 
-        // PUT: api/Owner/5
+        // PUT api/<SongController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<Song> Put([FromBody] Song value)
         {
+            songRepo.Update(value);
+            return songRepo.GetAll();
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE api/<SongController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<Song> Delete(int id)
         {
-
-
-
+            var song = songRepo.GetById(id);
+            songRepo.Delete(song);
+            return songRepo.GetAll();
         }
-
     }
 }

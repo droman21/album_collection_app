@@ -11,7 +11,7 @@ namespace album_collection.Repositories
         IEnumerable<T> GetAll();
         T GetById(int id);
         void Create(T entity);
-        //void Delete(Artist artist);
+        void Delete(T entity);
         void Update(T entity);
     }
 }

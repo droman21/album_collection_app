@@ -57,35 +57,35 @@ namespace album_collection
 
             modelbuilder.Entity<Song>().HasData(
 
-               new Song("Death in my pocket", 1, 1),
-               new Song("Super Song", 2, 1),
+               new Song("Death in my pocket", 1, 1, "2:37"),
+               new Song("Super Song", 2, 1, "4:34"),
 
-               new Song("Clusters", 3, 2),
-               new Song("Super Song", 4, 2),
+               new Song("Clusters", 3, 2, "5:34"),
+               new Song("Super Song", 4, 2, "1:34"),
 
-               new Song("Free Lunch", 5, 3),
-               new Song("Super Song", 6, 3),
+               new Song("Free Lunch", 5, 3, "6:34"),
+               new Song("Super Song", 6, 3, "3:34"),
 
-               new Song("Hold Up", 7, 4),
-               new Song("Super Song", 8, 4),
+               new Song("Hold Up", 7, 4, "5:37"),
+               new Song("Super Song", 8, 4, "4:24"),
 
-               new Song("My Boy", 9, 5),
-               new Song("Super Song", 10, 5),
+               new Song("My Boy", 9, 5, "4:34"),
+               new Song("Super Song", 10, 5, "4:34"),
 
-               new Song("Bad Guy", 11, 6),
-               new Song("Super Song", 12, 6),
+               new Song("Bad Guy", 11, 6, "4:34"),
+               new Song("Super Song", 12, 6, "4:34"),
 
-               new Song("Hype", 13, 7),
-               new Song("Super Song", 14, 7),
+               new Song("Hype", 13, 7, "4:34"),
+               new Song("Super Song", 14, 7, "4:34"),
 
-               new Song("Legend", 15, 8),
-               new Song("Super Song", 16, 8),
+               new Song("Legend", 15, 8, "4:34"),
+               new Song("Super Song", 16, 8, "4:34"),
 
-               new Song("Holiday", 17, 9),
-               new Song("Super Song", 18, 9),
+               new Song("Holiday", 17, 9, "4:34"),
+               new Song("Super Song", 18, 9, "4:34"),
 
-                new Song("West Savannah", 19, 10),
-                new Song("Super Song", 20, 10)
+                new Song("West Savannah", 19, 10, "4:34"),
+                new Song("Super Song", 20, 10, "4:34")
 
                ); ;
 

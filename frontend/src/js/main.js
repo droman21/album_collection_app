@@ -6,6 +6,7 @@ import Albums from './components/Albums';
 import Album from './components/Album';
 import Artist from './components/Artist';
 import AlbumsPostSection from './components/AlbumPostSection';
+import AlbumEdit from './components/AlbumEdit';
 
 const appDiv = document.querySelector('.app');
 
@@ -60,8 +61,8 @@ function showArtistsPageLoad() {
 }
 
 function showAlbums() {
-  const albumLink = document.querySelector('.nav__albums');
-  albumLink.addEventListener('click', function () {
+  const albumShowLink = document.querySelector('.nav__albums');
+  albumShowLink.addEventListener('click', function () {
     fetch('https://localhost:44313/api/album')
       .then(response => response.json())
       .then(albums => {
@@ -117,52 +118,6 @@ function buildNav() {
   })
 }
 
-
-// app.addEventListener("click", function(){
-//   if(event.target.classList.contains('delete-todo__submit')){
-//     const todoId = event.target.parentElement.querySelector('.todo__id').value;
-//     console.log(todoId);
-
-//     apiActions.deleteRequest(
-//       `https://localhost:44393/api/todo/${todoId}`,
-//       toDos => {
-//         app.innerHTML = artists(toDos);
-//       }
-//     )
-//   }
-// })
-
-// app.addEventListener("click", function(){
-//   if(event.target.classList.contains('edit-todo__edit')){
-//     const todoId = event.target.parentElement.querySelector('.todo__id').value;
-//     console.log(todoId);
-
-//     apiActions.getRequest(
-//       `https://localhost:44393/api/artist/${artistId}`,
-//       ArtistEdit => {
-//         console.log(artistEdit);
-//         app.innerHTML = ArtistEdit(artistEdit);
-//       }
-//     )
-//   }
-// })
-// function albumDetailClick() {
-//   const albumDetailClick = document.querySelector(".album__title");
-//   const album__id = document.querySelector(".album__id");
-//   albumDetailClick.addEventListener("click", function () {
-//     console.log("added album eventlistener")
-//       const id = album__id.id;
-//       console.log(`Album ID is ${id}`);
-//       fetch(`https://localhost:44313/api/album/${id}`)
-//         .then(response => response.json())
-//         .then(album => appDiv.innerHTML = Album(album))
-//         .catch(err => console.log(err))
-//     })
-
-
-// }
-
-
 appDiv.addEventListener("click", function () {
   if(event.target.classList.contains('album__title')){
     //const albumTitle = document.querySelector(".album__title");
@@ -211,4 +166,57 @@ appDiv.addEventListener("click", function () {
       }
   )
 }
+})
+
+appDiv.addEventListener('click', function(){
+  if(event.target.classList.contains('album-item__delete')){
+      console.log("We're in the delete function");
+      const albumId = event.target.parentElement.querySelector('.album-item__id').value;
+      console.log("About to delete the album " + albumId);
+
+      apiActions.deleteRequest(
+          `https://localhost:44313/api/album/${albumId}`,
+          albums => {
+              appDiv.innerHTML = Albums(albums);
+          }
+      )
+  }
+})
+
+appDiv.addEventListener("click", function(){
+  if(event.target.classList.contains('album-item__edit')){
+      const albumId = event.target.parentElement.querySelector('.album-item__id').value;
+      apiActions.getRequest(
+          `https://localhost:44313/api/album/${albumId}`,
+          albumEdit => {
+              console.log(albumEdit);
+              appDiv.innerHTML = AlbumEdit(albumEdit);
+           }
+      )
+  }
+})
+
+appDiv.addEventListener("click", function(){
+  if(event.target.classList.contains('edit-album__submit')){
+      const albumId = event.target.parentElement.querySelector('.edit-album__id').value;
+      const albumTitle = event.target.parentElement.querySelector('.edit-album__name').value;
+      
+      console.log("Put request is logging " + albumId);
+      const albumData = {
+          id: albumId,
+          title: albumTitle,
+
+
+      };
+
+      apiActions.putRequest(
+        console.log("Put request is logging " + albumId)
+          `https://localhost:44313/api/album/${albumId}`,
+          albumData,
+          albums => {
+              
+              appDiv.innerHTML = Albums(albums);
+          }
+      )
+  }
 })
