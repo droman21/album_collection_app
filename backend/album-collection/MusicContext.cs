@@ -29,8 +29,8 @@ namespace album_collection
             modelbuilder.Entity<Artist>().HasData(
 
 
-               new Artist("Machine Gun Kelly", 1, "Image", 30, "Bad Boy Records", "Cleveland, OH"),
-               new Artist("Big Moochie Grape", 2, "Image", 29, "Paper Route EMPIRE", "Memphis, TN"),
+               new Artist("Machine Gun Kelly", 1, "MGK.jpg", 30, "Bad Boy Records", "Cleveland, OH"),
+               new Artist("Big Moochie Grape", 2, "BigMoochie.jpg", 29, "Paper Route EMPIRE", "Memphis, TN"),
                new Artist("Isaiah Rashad", 3, "IsaiahRashad.jpg", 29, "Top Dawg Entertainment", "Chattanooga, TN"),
                new Artist("Beyonce", 4, "Beyonce.jpg", 38, "Parkwood", "Houston, TX"),
                new Artist("Billie Eilish", 5, "BillieEilish.jpg", 18, "Interscope Records", "Los Angeles, CA"),
@@ -41,10 +41,10 @@ namespace album_collection
             modelbuilder.Entity<Album>().HasData(
 
 
-                new Album("Hotel Diablo", 1, "MGK.jpg", "Bad Boy Records", 1),
-                new Album("Eat or Get Ate", 2, "BigMoochie.jpg", "Paper Route Empire", 2),
+                new Album("Hotel Diablo", 1, "HotelDiablo.jpg", "Bad Boy Records", 1),
+                new Album("Eat or Get Ate", 2, "EatOrGetAte.jpg", "Paper Route Empire", 2),
                 new Album("The Sun's Tirade", 3, "SunsTirade.jpg", "Top Dawg Entertainment", 3),
-                new Album("Lemonade", 4, "Lemonade. jpg", "Parkwood", 4),
+                new Album("Lemonade", 4, "Lemonade.jpg", "Parkwood", 4),
                 new Album("Don't Smile At Me", 5, "DontSmileAtMe.jpg", "Interscope Records", 5),
                 new Album("When We All Fall Aleep, Where Do We Go?", 6, "wwafawdwg.jpg", "Interscope Records", 5),
                 new Album("Views", 7, "Views.jpg", "OVO Sound", 6),
