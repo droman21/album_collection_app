@@ -189,7 +189,7 @@ appDiv.addEventListener("click", function(){
       apiActions.getRequest(
           `https://localhost:44313/api/album/${albumId}`,
           albumEdit => {
-              console.log(albumEdit);
+              console.log("Retrive the album " + albumEdit);
               appDiv.innerHTML = AlbumEdit(albumEdit);
            }
       )
@@ -200,21 +200,26 @@ appDiv.addEventListener("click", function(){
   if(event.target.classList.contains('edit-album__submit')){
       const albumId = event.target.parentElement.querySelector('.edit-album__id').value;
       const albumTitle = event.target.parentElement.querySelector('.edit-album__name').value;
+      console.log("About to get artist ID");
+      const albumArtist = event.target.parentElement.querySelector('.edit-album__artistID').value;
+      console.log("Got the artist ID");
+      const recordLabel = event.target.parentElement.querySelector('.edit-album__label').value;
       
       console.log("Put request is logging " + albumId);
       const albumData = {
-          id: albumId,
-          title: albumTitle,
-
+        id: albumId,
+        title: albumTitle,
+        artistId: 2,
+        label: recordLabel
 
       };
 
       apiActions.putRequest(
-        console.log("Put request is logging " + albumId)
           `https://localhost:44313/api/album/${albumId}`,
           albumData,
           albums => {
-              
+          console.log("Return all albums after edit " + albumId);
+             
               appDiv.innerHTML = Albums(albums);
           }
       )

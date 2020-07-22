@@ -28,7 +28,8 @@ namespace album_collection.Controllers
         [HttpGet("{id}")]
         public Album Get(int id)
         {
-            return albumRepo.GetById(id);
+            Album album = albumRepo.GetById(id);
+            return album;
         }
 
         // POST: api/Artist
@@ -43,7 +44,9 @@ namespace album_collection.Controllers
         [HttpPut("{id}")]
         public IEnumerable<Album> Put([FromBody] Album value)
         {
-            albumRepo.Update(value);
+            Album album = albumRepo.GetById(value.ID);
+            album.Title = value.Title;
+            albumRepo.Update(album);
             return albumRepo.GetAll();
         }
 

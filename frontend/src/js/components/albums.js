@@ -10,7 +10,7 @@ export default function Albums(albums){
                     <h4 class='album__title'>${album.title}</h4>
                     <button class='album-item__edit'>Edit</button>
                     <button class='album-item__delete'>Delete</button>
-                    <input class='album-item__id' type='hidden' value='${album.id}'>
+                    <input class='album-item__id' type="hidden" value='${album.id}'>
                 </li>
                 `
             }).join("")}
