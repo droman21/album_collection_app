@@ -8,6 +8,13 @@ export default function Albums(albums){
         <ul>
             ${albums.map(album => {
                 return `
+
+                <li>
+                    <h4 class='album__title'>${album.title}</h4>
+                    <button class='album-item__edit'>Edit</button>
+                    <button class='album-item__delete'>Delete</button>
+                    <input class='album-item__id' type="hidden" value='${album.id}'>
+                </li>
                     <div class="album__title">
                     <h4>${album.title}</h4>
                     </div>

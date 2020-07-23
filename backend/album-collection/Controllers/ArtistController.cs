@@ -48,20 +48,27 @@ namespace album_collection.Controllers
 
         // POST api/<ArtistController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Artist> Post([FromBody] Artist value)
         {
+            artistRepo.Create(value);
+            return artistRepo.GetAll();
         }
 
         // PUT api/<ArtistController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<Artist> Put([FromBody] Artist value)
         {
+            artistRepo.Update(value);
+            return artistRepo.GetAll();
         }
 
         // DELETE api/<ArtistController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<Artist> Delete(int id)
         {
+            var artist = artistRepo.GetById(id);
+            artistRepo.Delete(artist);
+            return artistRepo.GetAll();
         }
     }
 }

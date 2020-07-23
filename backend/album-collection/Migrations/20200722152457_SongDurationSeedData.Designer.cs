@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using album_collection;
 
 namespace album_collection.Migrations
 {
     [DbContext(typeof(MusicContext))]
-    partial class MusicContextModelSnapshot : ModelSnapshot
+    [Migration("20200722152457_SongDurationSeedData")]
+    partial class SongDurationSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +50,7 @@ namespace album_collection.Migrations
                         {
                             ID = 1,
                             ArtistID = 1,
-                            Image = "HotelDiablo.jpg",
+                            Image = "MGK.jpg",
                             Label = "Bad Boy Records",
                             Title = "Hotel Diablo"
                         },
@@ -56,7 +58,7 @@ namespace album_collection.Migrations
                         {
                             ID = 2,
                             ArtistID = 2,
-                            Image = "EatOrGetAte.jpg",
+                            Image = "BigMoochie.jpg",
                             Label = "Paper Route Empire",
                             Title = "Eat or Get Ate"
                         },
@@ -72,7 +74,7 @@ namespace album_collection.Migrations
                         {
                             ID = 4,
                             ArtistID = 4,
-                            Image = "Lemonade.jpg",
+                            Image = "Lemonade. jpg",
                             Label = "Parkwood",
                             Title = "Lemonade"
                         },
@@ -159,7 +161,7 @@ namespace album_collection.Migrations
                             Age = 30,
                             ArtistName = "Machine Gun Kelly",
                             HomeTown = "Cleveland, OH",
-                            Image = "MGK.jpg",
+                            Image = "Image",
                             RecordLabel = "Bad Boy Records"
                         },
                         new
@@ -168,7 +170,7 @@ namespace album_collection.Migrations
                             Age = 29,
                             ArtistName = "Big Moochie Grape",
                             HomeTown = "Memphis, TN",
-                            Image = "BigMoochie.jpg",
+                            Image = "Image",
                             RecordLabel = "Paper Route EMPIRE"
                         },
                         new

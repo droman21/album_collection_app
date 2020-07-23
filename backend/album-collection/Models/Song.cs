@@ -14,6 +14,7 @@ namespace album_collection.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public int AlbumID { get; set; }
+        public string SongDuration { get; set; }
 
  
         public virtual Album album { get; set; }
@@ -21,12 +22,13 @@ namespace album_collection.Models
         public Song()
         { }
 
-        public Song(string name, int songID, int albumID)
+        public Song(string name, int songID, int albumID, string songDuration)
         {
 
             this.Name = name;
             this.ID = songID;
             this.AlbumID = albumID;
+            this.SongDuration = songDuration;
 
 
         }
