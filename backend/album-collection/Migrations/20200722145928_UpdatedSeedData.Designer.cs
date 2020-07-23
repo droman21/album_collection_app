@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using album_collection;
 
 namespace album_collection.Migrations
 {
     [DbContext(typeof(MusicContext))]
-    partial class MusicContextModelSnapshot : ModelSnapshot
+    [Migration("20200722145928_UpdatedSeedData")]
+    partial class UpdatedSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,9 +224,6 @@ namespace album_collection.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SongDuration")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ID");
 
                     b.HasIndex("AlbumID");
@@ -236,141 +235,121 @@ namespace album_collection.Migrations
                         {
                             ID = 1,
                             AlbumID = 1,
-                            Name = "Death in my pocket",
-                            SongDuration = "2:37"
+                            Name = "Death in my pocket"
                         },
                         new
                         {
                             ID = 2,
                             AlbumID = 1,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 3,
                             AlbumID = 2,
-                            Name = "Clusters",
-                            SongDuration = "5:34"
+                            Name = "Clusters"
                         },
                         new
                         {
                             ID = 4,
                             AlbumID = 2,
-                            Name = "Super Song",
-                            SongDuration = "1:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 5,
                             AlbumID = 3,
-                            Name = "Free Lunch",
-                            SongDuration = "6:34"
+                            Name = "Free Lunch"
                         },
                         new
                         {
                             ID = 6,
                             AlbumID = 3,
-                            Name = "Super Song",
-                            SongDuration = "3:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 7,
                             AlbumID = 4,
-                            Name = "Hold Up",
-                            SongDuration = "5:37"
+                            Name = "Hold Up"
                         },
                         new
                         {
                             ID = 8,
                             AlbumID = 4,
-                            Name = "Super Song",
-                            SongDuration = "4:24"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 9,
                             AlbumID = 5,
-                            Name = "My Boy",
-                            SongDuration = "4:34"
+                            Name = "My Boy"
                         },
                         new
                         {
                             ID = 10,
                             AlbumID = 5,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 11,
                             AlbumID = 6,
-                            Name = "Bad Guy",
-                            SongDuration = "4:34"
+                            Name = "Bad Guy"
                         },
                         new
                         {
                             ID = 12,
                             AlbumID = 6,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 13,
                             AlbumID = 7,
-                            Name = "Hype",
-                            SongDuration = "4:34"
+                            Name = "Hype"
                         },
                         new
                         {
                             ID = 14,
                             AlbumID = 7,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 15,
                             AlbumID = 8,
-                            Name = "Legend",
-                            SongDuration = "4:34"
+                            Name = "Legend"
                         },
                         new
                         {
                             ID = 16,
                             AlbumID = 8,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 17,
                             AlbumID = 9,
-                            Name = "Holiday",
-                            SongDuration = "4:34"
+                            Name = "Holiday"
                         },
                         new
                         {
                             ID = 18,
                             AlbumID = 9,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         },
                         new
                         {
                             ID = 19,
                             AlbumID = 10,
-                            Name = "West Savannah",
-                            SongDuration = "4:34"
+                            Name = "West Savannah"
                         },
                         new
                         {
                             ID = 20,
                             AlbumID = 10,
-                            Name = "Super Song",
-                            SongDuration = "4:34"
+                            Name = "Super Song"
                         });
                 });
 

@@ -5,9 +5,9 @@ body {
     color: black;
     box-sizing: border-box;
     background-color: #333333;
-    margin: 0 4em;
+    margin: 0 auto;
+    max-width: 700px;
     min-width: 600px;
-    padding-right: 2.5em;
 }
 
 nav {
@@ -31,31 +31,50 @@ nav :hover {
 
 nav p {
     margin: 0;
-    padding: 1em 2em;
+    padding: 1em 5em;
 }
 .app {
     padding-top: 3em;
+}
+
+
+.header-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.artist {
+    text-align: center;
+}
+
+#artist__list ul{
+        margin: 0;
+        padding: 0;
 }
 
 .app h1 {
     color: honeydew;
 }
 
+.app ul {
+    margin: 0;
+    padding: 0;
+}
+
 .artist {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     border: 5px solid;
-    margin-bottom: 2.5px;
+    margin-bottom: 5px;
     background-color: gold;
     justify-items: center;
+    align-items: center;
     padding: 0 1em;
 }
 
 .albumsByArtist {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto; */
     border: 5px solid;
     margin-bottom: 2.5px;
     background-color: gold;
@@ -67,11 +86,36 @@ nav p {
     background-color: gold;
 }
 
+.AlbumList ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.album__title {
+    text-align: center;
+}
+
+.album__image {
+    justify-items: center;
+    align-items: center;
+}
+
 .create-album {
     display: flex;
     flex-flow: row;
     justify-content: center;
     padding: 1em 0;
+}
+
+.albumsByArtist ul li {
+    list-style-type: none;
 }
 
 .create-album__button {
