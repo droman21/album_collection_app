@@ -1,0 +1,129 @@
+body {
+    /* background-image: url(/Images/.jpg); */
+    /* background-size: cover; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    box-sizing: border-box;
+    background-color: #333333;
+    margin: 0 auto;
+    max-width: 700px;
+    min-width: 600px;
+}
+
+nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 100%;
+    position: fixed;
+    background-color: purple;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border-top: solid 4px;
+    border-bottom: solid 4px; 
+}
+
+nav :hover {
+    background-color: honeydew;
+    opacity: .7;
+}
+
+nav p {
+    margin: 0;
+    padding: 1em 5em;
+}
+.app {
+    padding-top: 3em;
+}
+
+
+.header-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.artist {
+    text-align: center;
+}
+
+#artist__list ul{
+        margin: 0;
+        padding: 0;
+}
+
+.app h1 {
+    color: honeydew;
+}
+
+.app ul {
+    margin: 0;
+    padding: 0;
+}
+
+.artist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    border: 5px solid;
+    margin-bottom: 5px;
+    background-color: gold;
+    justify-items: center;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.albumsByArtist {
+    border: 5px solid;
+    margin-bottom: 2.5px;
+    background-color: gold;
+}
+
+.AlbumList {
+    border: 5px solid;
+    margin-bottom: 2.5px;
+    background-color: gold;
+}
+
+.AlbumList ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.album__title {
+    text-align: center;
+}
+
+.album__image {
+    justify-items: center;
+    align-items: center;
+}
+
+.create-album {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.albumsByArtist ul li {
+    list-style-type: none;
+}
+
+.create-album__button {
+    padding: 1em;
+    font-weight: bold;
+    background-color: purple;
+    border: solid 4px;
+}
+.album_song_font {
+    color: white;
+}
