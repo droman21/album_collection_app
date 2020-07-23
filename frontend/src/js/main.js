@@ -120,9 +120,7 @@ function buildNav() {
 
 appDiv.addEventListener("click", function () {
   if(event.target.classList.contains('album__title')){
-    //const albumTitle = document.querySelector(".album__title");
-    console.log("added album eventlistener");
-      const id = event.target.id;
+    const id = document.querySelector('.album-item__id').value;
       console.log(`Album ID is ${id}`);
       fetch(`https://localhost:44313/api/album/${id}`)
         .then(response => response.json())

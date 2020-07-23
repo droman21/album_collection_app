@@ -1,9 +1,7 @@
 export default function Albums(albums){
     console.log("In the albums component")
     return `
-        <section class="header-container">
         <h1>Albums</h1>
-        </section>
         <section class="AlbumList">
         <ul>
             ${albums.map(album => {
